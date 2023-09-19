@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# React Principles Repo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repo looks to explore some of the more complex topics of React. It is a living breathing repo, therefore it is never complete. I use it as a space to implement and practice React patterns that interest me or are of a complex nature.
+
+Currently, I am exploring writing custom hooks. This can be seen in the implementation of the useArrayState hook. Moving forward, I am going to be implementing higher order components.
+
+Important to note is that the styling/UI of the components is not my main focus. I have installed Chakra UI purely for convenience. The implementation of these topics are my main concern.
 
 ## Available Scripts
 
