@@ -3,7 +3,7 @@ import "./App.css";
 import { Box, Button, ButtonGroup, Divider } from "@chakra-ui/react";
 import { ChakraProvider } from "@chakra-ui/react";
 import { NavigationEnum } from "./enums/navigationEnum";
-import CustomHooks from "./components/CustomHooks";
+import CustomHooks from "./components/CustomHooks/CustomHooks";
 
 function App() {
   const navigate = useNavigate();

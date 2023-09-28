@@ -1,3 +1,5 @@
+import { useState } from "react";
+import useArrayState from "../../hooks/useArrayState";
 import {
   Box,
   Button,
@@ -9,21 +11,20 @@ import {
   UnorderedList,
   VStack,
 } from "@chakra-ui/react";
-import useArrayState from "../hooks/useArrayState";
-import { useState } from "react";
 import { SmallCloseIcon } from "@chakra-ui/icons";
+import { generateRandomString } from "../../utils/utility";
 
-type Book = {
-  id: number;
+type Movie = {
+  id: string;
   name: string;
 };
 
-const BookList = () => {
+function MovieList() {
   const [input, setInput] = useState("");
-  const [books, { add, remove, clear }] = useArrayState<Book>([
+  const [movies, { add, remove, clear }] = useArrayState<Movie>([
     {
-      id: 1,
-      name: "Sapiens",
+      id: generateRandomString(3),
+      name: "Batman",
     },
   ]);
 
@@ -31,43 +32,43 @@ const BookList = () => {
     setInput(e.target.value);
   };
 
-  const handleAddBook = () => {
-    if (books.some((book) => book.name === input)) {
+  const handleAddMovie = () => {
+    if (movies.some((movie) => movie.name === input)) {
       return;
     }
     add({
-      id: Math.random() * 10e4,
+      id: generateRandomString(3),
       name: input,
     });
     setInput("");
   };
 
-  const handleRemoveBook = (book: Book) => () => remove(book);
+  const handleRemoveMovie = (movie: Movie) => () => remove(movie);
 
   return (
     <VStack spacing="5">
       <Heading as="h2" size="md">
-        My Book List
+        My Movie List
       </Heading>
       <UnorderedList>
-        {books.map((book) => (
-          <ListItem key={book.id}>
+        {movies.map((movie) => (
+          <ListItem key={movie.id}>
             <Box display="flex" alignItems="center">
-              <Text me="3">{book.name}</Text>
-              <SmallCloseIcon onClick={handleRemoveBook(book)} />
+              <Text me="3">{movie.name}</Text>
+              <SmallCloseIcon onClick={handleRemoveMovie(movie)} />
             </Box>
           </ListItem>
         ))}
       </UnorderedList>
 
       <Input
-        placeholder="Add new book"
+        placeholder="Add new movie"
         value={input}
         onChange={handleInputChange}
       />
 
-      <HStack justify="space-between" w="100%">
-        <Button colorScheme="blue" onClick={handleAddBook} flex="1">
+      <HStack justifyContent="space-between" w="100%">
+        <Button colorScheme="blue" onClick={handleAddMovie} flex="1">
           Add Book
         </Button>
         <Button colorScheme="red" onClick={clear} flex="1">
@@ -76,6 +77,6 @@ const BookList = () => {
       </HStack>
     </VStack>
   );
-};
+}
 
-export default BookList;
+export default MovieList;
