@@ -12,11 +12,7 @@ import {
 import useArrayState from "../../hooks/useArrayState";
 import { useState } from "react";
 import { SmallCloseIcon } from "@chakra-ui/icons";
-
-type Book = {
-  id: number;
-  name: string;
-};
+import { Book } from "../../types/book";
 
 const BookList = () => {
   const [input, setInput] = useState("");

@@ -13,11 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { SmallCloseIcon } from "@chakra-ui/icons";
 import { generateRandomString } from "../../utils/utility";
-
-type Movie = {
-  id: string;
-  name: string;
-};
+import { Movie } from "../../types/movie";
 
 function MovieList() {
   const [input, setInput] = useState("");
