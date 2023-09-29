@@ -2,7 +2,7 @@
 
 This repo looks to explore some of the more complex topics of React. It is a living breathing repo, therefore it is never complete. I use it as a space to implement and practice React patterns that interest me or are of a complex nature.
 
-Currently, I am exploring writing custom hooks. This can be seen in the implementation of the useArrayState hook. Moving forward, I am going to be implementing higher order components.
+So far I have explored custom hooks and higher order components. In the future I aim to further improve my higher order component knowledge by exploring enhancing components using render props.
 
 Important to note is that the styling/UI of the components is not my main focus. I have installed Chakra UI purely for convenience. The implementation of these topics are my main concern.
 
